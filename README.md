@@ -55,7 +55,7 @@ DocuMind AI is an enterprise-grade Document Intelligence and Multi-Document Retr
                    │
                    ▼
      [Vector Embeddings (768-dim)]
-  (Gemini text-embedding-004 / OpenAI / Semantic Vector)
+   (Local deterministic vectors by default / optional OpenAI embeddings)
                    │
                    ▼
    [Vector Database (Supabase pgvector / Memory Store)]
@@ -78,8 +78,8 @@ DocuMind AI is an enterprise-grade Document Intelligence and Multi-Document Retr
    [Context Construction + History Context]
                    │
                    ▼
-    [Grounded LLM Generation Engine]
-  (Gemini 1.5/2.0 Flash / GPT-4o-mini / Grounded Synthesizer)
+      [Grounded LLM Generation Engine]
+   (Groq / optional OpenAI / Grounded Synthesizer)
                    │
                    ▼
   [AI Answer with In-Text & Structured Citations]
@@ -106,8 +106,13 @@ cp .env.example .env.local
 
 Populate your preferred keys:
 ```env
-# Cloud LLM & Embeddings (Preferred: Google Gemini)
-GEMINI_API_KEY=your_gemini_api_key_here
+# Cloud LLM answer generation (Preferred: Groq)
+GROQ_API_KEY=your_groq_api_key_here
+GROQ_MODEL=openai/gpt-oss-120b
+# Local embeddings and OCR are used by default.
+# Optional legacy Gemini ingestion paths:
+USE_GEMINI_EMBEDDINGS=false
+USE_GEMINI_OCR=false
 
 # Optional: OpenAI fallback
 OPENAI_API_KEY=your_openai_api_key_here
