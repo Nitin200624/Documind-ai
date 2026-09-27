@@ -176,20 +176,3 @@ When demonstrating DocuMind AI to hackathon judges:
 
 ---
 
-## 🚢 Deploying to Vercel
-
-1. Push this repository to GitHub:
-   ```bash
-   git add .
-   git commit -m "DocuMind AI Hackathon MVP"
-   git branch -M main
-   git remote add origin <your-github-repo-url>
-   git push -u origin main
-   ```
-2. Import the project into [Vercel](https://vercel.com).
-3. Under **Environment Variables**, add:
-   - `GEMINI_API_KEY` (or `OPENAI_API_KEY`)
-   - `NEXT_PUBLIC_SUPABASE_URL` (if using Supabase)
-   - `NEXT_PUBLIC_SUPABASE_ANON_KEY`
-   - `SUPABASE_SERVICE_ROLE_KEY`
-4. Click **Deploy**. Vercel will build and host the application with edge/serverless API routes.
